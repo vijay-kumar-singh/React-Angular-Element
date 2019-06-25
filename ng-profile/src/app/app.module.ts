@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from "@angular/elements";
-import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from "@angular/forms";
 @NgModule({
   declarations: [
-    LoginComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -14,16 +14,16 @@ import { FormsModule } from "@angular/forms";
   providers: [],
   bootstrap: [],
   entryComponents:[
-    LoginComponent
+    ProfileComponent
   ]
 })
-export class AppModule { 
+export class AppModule {
   constructor(private injector:Injector){
 
   }
 
   ngDoBootstrap() {
-    const el = createCustomElement(LoginComponent, { injector: this.injector });
-    customElements.define('ng-login', el);
+    const el = createCustomElement(ProfileComponent, { injector: this.injector });
+    customElements.define('ng-profile', el);
    }
 }
