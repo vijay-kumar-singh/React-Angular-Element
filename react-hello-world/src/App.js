@@ -1,3 +1,4 @@
+"use strict";
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -6,7 +7,7 @@ class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = {username:'default-username', password:'default-password'}
+    this.state = {username:'vijay', bookingcode:'bnvchvd'}
   }
 
   componentDidMount() {
@@ -18,7 +19,7 @@ class App extends Component {
   }
 
   handleNvEnter = (event) => {
-    this.setState({ username: event.detail.username, password: event.detail.password })
+    this.setState({ username: event.detail.username, bookingcode: event.detail.bookingcode })
   }
 
   render() {
@@ -29,7 +30,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React + Angular Component Integration Demo</h1>
         </header>
 
-          <ng-login ref={elem => this.nv = elem} username={this.state.username} password={this.state.password}></ng-login>
+          <ng-profile ref={elem => this.nv = elem} username={this.state.username} bookingcode={this.state.bookingcode}></ng-profile>
           <br/>
           <h3>React.js - Output</h3>
           <div>
